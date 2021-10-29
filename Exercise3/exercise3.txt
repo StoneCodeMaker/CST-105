@@ -1,0 +1,101 @@
+
+LINK to Onedrive shared video:
+
+https://mygcuedu6961-my.sharepoint.com/:f:/g/personal/cstickel1_my_gcu_edu/EgOheZhcDXtHmQVq7xJemKkBhW3HeaysWkcpDzV4QtrNkw?e=ewJkJd
+
+
+
+
+CODE:
+
+/*
+ * Cameron Stickel
+ * CST-105
+ * 
+ */
+
+import java.util.Scanner; 
+
+public class GuessingGame {
+
+	public static void main(String[] args) {
+		
+		int randomNumber;
+		randomNumber = (int) (Math.random() * 999 + 1);
+
+		Scanner scanner = new Scanner(System.in); 
+		
+		int firstTime = 0;
+		String userValue = "";
+		
+		int userGuessChange = 0;
+		int permanentLowerValue = 0;
+		int displayedLower = 0;
+		
+		int userGuess = 0;
+		do {
+			
+			
+			if(firstTime == 0) 
+			{
+				System.out.print("Please enter a value between 1 and 10000:");	
+				firstTime = 1;
+			} else
+			{
+				if(userValue == "lower")
+				{
+					userGuessChange = userGuess - 1;
+					permanentLowerValue = userGuessChange;
+					displayedLower = permanentLowerValue;
+					System.out.print("Please enter a value between " + 1 +  " and " + userGuessChange + ":");
+				}else
+				{
+					userGuessChange = userGuess + 1;
+					if(permanentLowerValue > 0)
+					{
+						System.out.print("Please enter a value between " + userGuessChange +  " and " + permanentLowerValue + ":");
+					}
+					else
+					{
+						System.out.print("Please enter a value between " + userGuessChange +  " and " + permanentLowerValue + ":");
+					}
+					
+				}
+				
+			}
+			
+			
+			//test the random number out
+			//System.out.println();
+			//System.out.println("random is " + randomNumber);
+			//System.out.println();
+			
+			userGuess = scanner.nextInt();
+			
+			if (userGuess == randomNumber) {
+				System.out.println("WINNER");
+			}
+		
+			else if (userGuess < randomNumber)
+			{
+				System.out.println("HIGHER");
+				userValue = "higher";
+			}
+				
+			else if(userGuess > randomNumber)
+			{
+				System.out.println("LOWER");
+				userValue = "lower";
+			}
+			
+			
+		} while(userGuess != randomNumber);
+		
+		scanner.close();
+	}
+
+}
+
+
+
+

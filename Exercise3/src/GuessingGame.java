@@ -1,6 +1,10 @@
+/*
+ * Cameron Stickel
+ * CST-105
+ * 
+ */
+
 import java.util.Scanner; 
-
-
 
 public class GuessingGame {
 
@@ -65,6 +69,7 @@ public class GuessingGame {
 	 
 	public static void main(String[] args) {
 		
+<<<<<<< Updated upstream
 		 guessingNumberGame();
 		
 		/*
@@ -73,30 +78,43 @@ public class GuessingGame {
 		//Scanner keyboard = new Scanner(Scanner.in);
 		Scanner keyboard = new Scanner(System.in); 
 		int guess;
+=======
+		int randomNumber;
+		randomNumber = (int) (Math.random() * 999 + 1);
+
+		Scanner scanner = new Scanner(System.in); 
+		
+		int userGuess;
+>>>>>>> Stashed changes
 		do {
-			System.out.print("Enter a guess(1-10000): ");
-			guess = keyboard.nextInt();
-			if (guess == secretNumber) {
-				System.out.println("Your guess is correct Congratulations!");
+			
+			System.out.print("Please enter a value between 1 and 10000:");
+			userGuess = scanner.nextInt();
+			if (userGuess == randomNumber) {
+				System.out.println("WINNER");
 			}
 		
-			else if (guess <  secretNumber)
+			else if (userGuess < randomNumber)
 			{
-				System.out.println("Your guess is smaller than the secret number.");
+				System.out.println("HIGHER");
 			}
 				
-			else if(guess > secretNumber)
+			else if(userGuess > randomNumber)
 			{
-				System.out.println("Your guess is greater than the secret.");
+				System.out.println("LOWER");
 			}
 			
 			
-		} while(guess != secretNumber);
+		} while(userGuess != randomNumber);
 		
+<<<<<<< Updated upstream
 		keyboard.close();
 		*/
 		
 		
+=======
+		scanner.close();
+>>>>>>> Stashed changes
 	}
 
 }
